@@ -64,14 +64,45 @@ class CreateSchema extends Command
             DB::reconnect(env('DB_CONNECTION'));
 
             // Migrations
-            Artisan::call('migrate --path=/database/migrations/2014_10_12_000000_create_users_table.php');
-            Artisan::call('migrate --path=/database/migrations/2014_10_12_100000_create_password_resets_table.php');
-            Artisan::call('migrate --path=/database/migrations/2020_12_22_002536_tipo_pagamento.php');
-            Artisan::call('migrate --path=/database/migrations/2020_12_22_002537_create_vendas_table.php');
-            Artisan::call('migrate --path=/database/migrations/2020_12_22_002543_create_produtos_table.php');
-            Artisan::call('migrate --path=/database/migrations/2020_12_22_002545_create_vendas_produtos_table.php');
-            Artisan::call('migrate --path=/database/migrations/2020_12_22_002549_create_estoque_table.php');
-            Artisan::call('migrate --path=/database/migrations/2021_01_14_011616_create_categorias_table.php');
+            Artisan::call('migrate', [
+                '--path' => '/database/migrations/2014_10_12_000000_create_users_table.php',
+                '--force' => true,
+            ]);
+
+            Artisan::call('migrate', [
+                '--path' => '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+                '--force' => true,
+            ]);
+
+            Artisan::call('migrate', [
+                '--path' => '/database/migrations/2020_12_22_002536_tipo_pagamento.php',
+                '--force' => true,
+            ]);
+
+            Artisan::call('migrate', [
+                '--path' => '/database/migrations/2020_12_22_002537_create_vendas_table.php',
+                '--force' => true,
+            ]);
+
+            Artisan::call('migrate', [
+                '--path' => '/database/migrations/2020_12_22_002543_create_produtos_table.php',
+                '--force' => true,
+            ]);
+
+            Artisan::call('migrate', [
+                '--path' => '/database/migrations/2020_12_22_002545_create_vendas_produtos_table.php',
+                '--force' => true,
+            ]);
+
+            Artisan::call('migrate', [
+                '--path' => '/database/migrations/2020_12_22_002549_create_estoque_table.php',
+                '--force' => true,
+            ]);
+
+            Artisan::call('migrate', [
+                '--path' => '/database/migrations/2021_01_14_011616_create_categorias_table.php',
+                '--force' => true,
+            ]);
 
             // Seed
             Artisan::call('db:seed');
