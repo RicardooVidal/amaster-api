@@ -178,7 +178,7 @@ class ProdutoController extends Controller
     public function deleteElasticsearch(int $id)
     {
         $params = [
-            'index' => Database::getSchemaByConfig() . 'produtos',
+            'index' => Database::getSchemaByConfig() . '.produtos',
             'id'    => $id
         ];
 
