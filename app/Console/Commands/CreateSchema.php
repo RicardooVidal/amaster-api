@@ -105,7 +105,9 @@ class CreateSchema extends Command
             ]);
 
             // Seed
-            Artisan::call('db:seed');
+            Artisan::call('db:seed', [
+                '--force' => true
+            ]); 
         } catch (Exception $e) {
             throw $e;
         }
