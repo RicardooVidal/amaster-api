@@ -11,7 +11,10 @@ class EmpresaController extends Controller
     public function createSchema(Request $request)
     {
         try {
-            Artisan::call('create-schema ' .$request->schema);
+            $billing = new BillingController();
+            $billing->store($request->schema);
+
+            Artisan::call('create-schema ' . $request->schema);
             return response()
             ->json(
                 [

@@ -30,6 +30,7 @@ $router->get('/status', function () {
 $router->group(['prefix' => '{token}/api', 'middleware' => 'auth'], function() use ($router) {
 
     $router->post('/empresa', 'EmpresaController@createSchema');
+    $router->get('/billing/check', 'BillingController@check');
 
     $router->get('/get-schema', function(Request $request) {
         $token = $request->route('token');
