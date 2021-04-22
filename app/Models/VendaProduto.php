@@ -8,7 +8,7 @@ class VendaProduto extends Model
 {
     protected $table = 'vendas_produtos';
     public $timestamps = false;
-    protected $fillable = ['id_venda', 'id_produto', 'quantidade', 'preco', 'valor_total'];
+    protected $fillable = ['id_venda', 'id_produto', 'quantidade', 'preco', 'preco_custo', 'valor_total'];
 
     public function venda()
     {

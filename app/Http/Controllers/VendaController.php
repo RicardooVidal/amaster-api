@@ -55,6 +55,7 @@ class VendaController extends Controller
                         'id_produto' => $produto['id'],
                         'quantidade' => $produto['quantidade'],
                         'preco' => $produto['preco'],
+                        'preco_custo' => $produto['preco_custo'],
                         'valor_total' => $produto['preco'] * $produto['quantidade']
                     ]);
                     // tira a quantidade vendida do estoque na tabela de produto
@@ -176,6 +177,7 @@ class VendaController extends Controller
                 'descricao' => $produto['descricao'],
                 'quantidade' => intval($produto['quantidade']),
                 'preco' => intval($produto['preco']),
+                'preco_custo' => intval($produto['preco_custo']),
                 'categoria' => $produto['categoria']
             ];
         }

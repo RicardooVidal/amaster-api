@@ -18,6 +18,7 @@ class CreateVendasProdutosTable extends Migration
             $table->integer('id_venda');
             $table->integer('id_produto');
             $table->integer('quantidade');
+            $table->bigInteger('preco_custo')->nullable();
             $table->bigInteger('preco')->nullable();
             $table->bigInteger('valor_total')->nullable();
 
