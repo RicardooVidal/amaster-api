@@ -47,6 +47,7 @@ $router->group(['prefix' => '{token}/api', 'middleware' => 'auth'], function() u
     });
 
     $router->group(['prefix' => '/produto'], function() use ($router) {
+        $router->get('/all','ProdutoController@searchAll');
         $router->get('/search','ProdutoController@searchByField');
         $router->get('/search_exact','ProdutoController@searchExact');
         $router->get('', 'ProdutoController@index');

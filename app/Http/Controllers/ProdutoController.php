@@ -185,6 +185,20 @@ class ProdutoController extends Controller
         $this->esDelete($params);
     }
 
+    public function searchAll()
+    {
+        $params = [
+            'index' => Database::getSchemaByConfig() . '.produtos',
+            'body'  => [
+                'query' => [
+                    'match_all' => new \stdClass()
+                ]
+            ]
+        ];
+
+        return $this->esSearch($params);
+    }
+
     public function searchByField(Request $request)
     {
         $field = $request->field;
