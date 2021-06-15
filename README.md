@@ -1,6 +1,6 @@
 API para o Aplicativo Adega Master. 
 
-Requerimentos:
+Requisitos:
 
 PHP 7.4
 Postgres
